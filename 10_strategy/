@@ -1,0 +1,25 @@
+package main
+
+const (
+	ROCK     int = 0
+	SCISSORS int = 1
+	PAPER    int = 2
+)
+
+type Hand struct {
+	name      string
+	handValue int
+	hands     []int
+}
+
+func NewHand(name string, handValue int) *Hand {
+	h := new(Hand)
+	h.name = name
+	h.handValue = handValue
+	h.hands = []int{ROCK, SCISSORS, PAPER}
+	return h
+}
+
+func (h *Hand)GetValue(handValue int) int {
+    return h.hands[handValue]
+}
